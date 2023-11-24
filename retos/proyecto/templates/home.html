@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -137,6 +141,11 @@
         <h1 class="display-4">INSTRUCTIVO PARA LA PRIORIZACIÓN DE RETOS</h1>
     </div>
 
+
+    <h2 class="text-center text-primary mb-4">¡Bienvenido al Grupo {{ grupo }}!</h2>
+
+
+
     <div class="contenido">
             <p><span class="numero">1.</span> <span class="titulo-seccion">NOMBRES DE LOS INTEGRANTES DEL EQUIPO:</span> Deben escribir en cada pestaña llamada nombre, el nombre de los integrantes del equipo. Primero se debe pinchar en la pestaña del nombre, se da clic al mouse en el lado izquierdo y se desplegará un menú, deben elegir cambiar nombre. Este formato da la posibilidad de trabajar con equipos hasta de 7 personas, si son menos se dejan las demás pestañas sin nombre.</p>
             <p><span class="numero">2.</span> <span class="titulo-seccion">ELECCIÓN DE LOS RETOS:</span> Deben elegir para este ejercicio 4 RETOS de los encontrados en la fase de identificación de RETOS del caso de estudio. Deben escribir en la tabla que hay en la pestaña RETOS, los 4 RETOS con los que van a trabajar esta priorización para la empresa del caso de estudio. El RETO que escriban como RETO 1 siempre debe ser el mismo; es decir, el RETO 1 siempre será el mismo en toda esta plantilla.</p>
@@ -201,13 +210,10 @@
                 <tr>
                     <th>RETO 1</th>
                     <th>FACTIBLE</th>
-                    <th>MIEMBRO 1</th>
-                    <th>MIEMBRO 2</th>
-                    <th>MIEMBRO 3</th>
+                    <th>MIEMBRO</th>
                     <th>ESTRATÉGICO</th>
-                    <th>MIEMBRO 1</th>
-                    <th>MIEMBRO 2</th>
-                    <th>MIEMBRO 3</th>
+                    <th>MIEMBRO</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -215,24 +221,16 @@
                     <td></td>
                     <td>¿La empresa cuenta con los recursos humanos para trabajar en este Reto?  (1 no cuenta con los recursos, 5 sí cuenta con todos los recursos)</td>
                     <td><input type="text" name="reto1_factible_miembro1"></td>
-                    <td><input type="text" name="reto1_factible_miembro2"></td>
-                    <td><input type="text" name="reto1_factible_miembro3"></td>
                     <td>¿Este Reto está alineado con la estrategia de innovación definida por la empresa? (1 no está alineado, 5 sí está alineado)</td>
                     <td><input type="text" name="reto1_estrategico_miembro1"></td>
-                    <td><input type="text" name="reto1_estrategico_miembro2"></td>
-                    <td><input type="text" name="reto1_estrategico_miembro3"></td>
                 </tr>
 
                 <tr>
                     <td></td>
                     <td>¿La empresa cuenta con los recursos financieros para una posible solución para este Reto? (1 no cuenta con los recursos, 5 sí cuenta con todos los recursos)</td>
                     <td><input type="text" name="reto4_factible_miembro1"></td>
-                    <td><input type="text" name="reto4_factible_miembro2"></td>
-                    <td><input type="text" name="reto4_factible_miembro3"></td>
                     <td>¿La posible solución a este Reto puede generar aumento de ingresos o reducción de costos? (1 no genera ni aumento de ingresos ni reducción de costos, 5 sí genera aumento de ingresos o reduce los costos)</td>
                     <td><input type="text" name="reto4_estrategico_miembro1"></td>
-                    <td><input type="text" name="reto4_estrategico_miembro2"></td>
-                    <td><input type="text" name="reto4_estrategico_miembro3"></td>
                 </tr>
 
 
@@ -241,23 +239,15 @@
                 <td></td>
                 <td>¿La empresa cuenta con el conocimiento para trabajar en este Reto? (1 no cuenta con el conocimiento, 5 sí cuenta con el conocimiento)</td>
                 <td><input type="text" name="reto3_factible_miembro1"></td>
-                <td><input type="text" name="reto3_factible_miembro2"></td>
-                <td><input type="text" name="reto3_factible_miembro3"></td>
                 <td>¿Trabajar en este Reto puede crearle una ventaja competitiva a la empresa? (1 no crea ninguna ventaja competitiva, 5 sí le crea una ventaja competitiva)</td>
                 <td><input type="text" name="reto3_estrategico_miembro1"></td>
-                <td><input type="text" name="reto3_estrategico_miembro2"></td>
-                <td><input type="text" name="reto3_estrategico_miembro3"></td>
             </tr>
             <tr>
                 <td></td>
                 <td>¿La empresa cuenta con los espacios físicos necesarios para trabajar en una posible solución a este Reto? (1 no cuenta con los espacios físicos, 5 sí cuenta con los espacios físicos)</td>
                 <td><input type="text" name="reto4_factible_miembro1"></td>
-                <td><input type="text" name="reto4_factible_miembro2"></td>
-                <td><input type="text" name="reto4_factible_miembro3"></td>
                 <td>¿Trabajar en este Reto puede crear un impacto positivo bien sea económico, ambiental y/o social a la empresa? (1 no genera impacto positivo, 5 sí genera impactos positivos)</td>
                 <td><input type="text" name="reto4_estrategico_miembro1"></td>
-                <td><input type="text" name="reto4_estrategico_miembro2"></td>
-                <td><input type="text" name="reto4_estrategico_miembro3"></td>
             </tr>
 
 
@@ -265,12 +255,8 @@
                 <td></td>
                 <td>NOTA PROMEDIO DE CADA MIEMBRO DEL COMITÉ</td>
                 <td id="miembro1-promedio">0.0</td>
-                <td id="miembro2-promedio">0.0</td>
-                <td id="miembro3-promedio">0.0</td>
                 <td>NOTA PROMEDIO DE CADA MIEMBRO DEL COMITÉ</td>
                 <td id="estrategico-miembro1-promedio">0.0</td>
-                <td id="estrategico-miembro2-promedio">0.0</td>
-                <td id="estrategico-miembro3-promedio">0.0</td>
             </tr>
 
 
@@ -287,13 +273,10 @@
                 <tr>
                     <th>RETO 2</th>
                     <th>FACTIBLE</th>
-                    <th>MIEMBRO 1</th>
-                    <th>MIEMBRO 2</th>
-                    <th>MIEMBRO 3</th>
+                    <th>MIEMBRO </th>
                     <th>ESTRATÉGICO</th>
-                    <th>MIEMBRO 1</th>
-                    <th>MIEMBRO 2</th>
-                    <th>MIEMBRO 3</th>
+                    <th>MIEMBRO</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -301,24 +284,16 @@
                     <td></td>
                     <td>¿La empresa cuenta con los recursos humanos para trabajar en este Reto?  (1 no cuenta con los recursos, 5 sí cuenta con todos los recursos)</td>
                     <td><input type="text" name="reto1_factible_miembro1"></td>
-                    <td><input type="text" name="reto1_factible_miembro2"></td>
-                    <td><input type="text" name="reto1_factible_miembro3"></td>
                     <td>¿Este Reto está alineado con la estrategia de innovación definida por la empresa? (1 no está alineado, 5 sí está alineado)</td>
                     <td><input type="text" name="reto1_estrategico_miembro1"></td>
-                    <td><input type="text" name="reto1_estrategico_miembro2"></td>
-                    <td><input type="text" name="reto1_estrategico_miembro3"></td>
                 </tr>
 
                 <tr>
                     <td></td>
                     <td>¿La empresa cuenta con los recursos financieros para una posible solución para este Reto? (1 no cuenta con los recursos, 5 sí cuenta con todos los recursos)</td>
                     <td><input type="text" name="reto4_factible_miembro1"></td>
-                    <td><input type="text" name="reto4_factible_miembro2"></td>
-                    <td><input type="text" name="reto4_factible_miembro3"></td>
                     <td>¿La posible solución a este Reto puede generar aumento de ingresos o reducción de costos? (1 no genera ni aumento de ingresos ni reducción de costos, 5 sí genera aumento de ingresos o reduce los costos)</td>
                     <td><input type="text" name="reto4_estrategico_miembro1"></td>
-                    <td><input type="text" name="reto4_estrategico_miembro2"></td>
-                    <td><input type="text" name="reto4_estrategico_miembro3"></td>
                 </tr>
 
 
@@ -327,23 +302,15 @@
                 <td></td>
                 <td>¿La empresa cuenta con el conocimiento para trabajar en este Reto? (1 no cuenta con el conocimiento, 5 sí cuenta con el conocimiento)</td>
                 <td><input type="text" name="reto3_factible_miembro1"></td>
-                <td><input type="text" name="reto3_factible_miembro2"></td>
-                <td><input type="text" name="reto3_factible_miembro3"></td>
                 <td>¿Trabajar en este Reto puede crearle una ventaja competitiva a la empresa? (1 no crea ninguna ventaja competitiva, 5 sí le crea una ventaja competitiva)</td>
                 <td><input type="text" name="reto3_estrategico_miembro1"></td>
-                <td><input type="text" name="reto3_estrategico_miembro2"></td>
-                <td><input type="text" name="reto3_estrategico_miembro3"></td>
             </tr>
             <tr>
                 <td></td>
                 <td>¿La empresa cuenta con los espacios físicos necesarios para trabajar en una posible solución a este Reto? (1 no cuenta con los espacios físicos, 5 sí cuenta con los espacios físicos)</td>
                 <td><input type="text" name="reto4_factible_miembro1"></td>
-                <td><input type="text" name="reto4_factible_miembro2"></td>
-                <td><input type="text" name="reto4_factible_miembro3"></td>
                 <td>¿Trabajar en este Reto puede crear un impacto positivo bien sea económico, ambiental y/o social a la empresa? (1 no genera impacto positivo, 5 sí genera impactos positivos)</td>
                 <td><input type="text" name="reto4_estrategico_miembro1"></td>
-                <td><input type="text" name="reto4_estrategico_miembro2"></td>
-                <td><input type="text" name="reto4_estrategico_miembro3"></td>
             </tr>
 
 
@@ -351,12 +318,8 @@
                 <td></td>
                 <td>NOTA PROMEDIO DE CADA MIEMBRO DEL COMITÉ</td>
                 <td id="miembro1-promedio">0.0</td>
-                <td id="miembro2-promedio">0.0</td>
-                <td id="miembro3-promedio">0.0</td>
                 <td>NOTA PROMEDIO DE CADA MIEMBRO DEL COMITÉ</td>
                 <td id="estrategico-miembro1-promedio">0.0</td>
-                <td id="estrategico-miembro2-promedio">0.0</td>
-                <td id="estrategico-miembro3-promedio">0.0</td>
             </tr>
             </tbody>
         </table>
@@ -371,13 +334,9 @@
                 <tr>
                     <th>RETO 3</th>
                     <th>FACTIBLE</th>
-                    <th>MIEMBRO 1</th>
-                    <th>MIEMBRO 2</th>
-                    <th>MIEMBRO 3</th>
+                    <th>MIEMBRO</th>
                     <th>ESTRATÉGICO</th>
-                    <th>MIEMBRO 1</th>
-                    <th>MIEMBRO 2</th>
-                    <th>MIEMBRO 3</th>
+                    <th>MIEMBRO</th>
                 </tr>
             </thead>
             <tbody>
@@ -385,24 +344,16 @@
                     <td></td>
                     <td>¿La empresa cuenta con los recursos humanos para trabajar en este Reto?  (1 no cuenta con los recursos, 5 sí cuenta con todos los recursos)</td>
                     <td><input type="text" name="reto1_factible_miembro1"></td>
-                    <td><input type="text" name="reto1_factible_miembro2"></td>
-                    <td><input type="text" name="reto1_factible_miembro3"></td>
                     <td>¿Este Reto está alineado con la estrategia de innovación definida por la empresa? (1 no está alineado, 5 sí está alineado)</td>
                     <td><input type="text" name="reto1_estrategico_miembro1"></td>
-                    <td><input type="text" name="reto1_estrategico_miembro2"></td>
-                    <td><input type="text" name="reto1_estrategico_miembro3"></td>
                 </tr>
 
                 <tr>
                     <td></td>
                     <td>¿La empresa cuenta con los recursos financieros para una posible solución para este Reto? (1 no cuenta con los recursos, 5 sí cuenta con todos los recursos)</td>
                     <td><input type="text" name="reto4_factible_miembro1"></td>
-                    <td><input type="text" name="reto4_factible_miembro2"></td>
-                    <td><input type="text" name="reto4_factible_miembro3"></td>
                     <td>¿La posible solución a este Reto puede generar aumento de ingresos o reducción de costos? (1 no genera ni aumento de ingresos ni reducción de costos, 5 sí genera aumento de ingresos o reduce los costos)</td>
                     <td><input type="text" name="reto4_estrategico_miembro1"></td>
-                    <td><input type="text" name="reto4_estrategico_miembro2"></td>
-                    <td><input type="text" name="reto4_estrategico_miembro3"></td>
                 </tr>
 
 
@@ -411,23 +362,15 @@
                 <td></td>
                 <td>¿La empresa cuenta con el conocimiento para trabajar en este Reto? (1 no cuenta con el conocimiento, 5 sí cuenta con el conocimiento)</td>
                 <td><input type="text" name="reto3_factible_miembro1"></td>
-                <td><input type="text" name="reto3_factible_miembro2"></td>
-                <td><input type="text" name="reto3_factible_miembro3"></td>
                 <td>¿Trabajar en este Reto puede crearle una ventaja competitiva a la empresa? (1 no crea ninguna ventaja competitiva, 5 sí le crea una ventaja competitiva)</td>
                 <td><input type="text" name="reto3_estrategico_miembro1"></td>
-                <td><input type="text" name="reto3_estrategico_miembro2"></td>
-                <td><input type="text" name="reto3_estrategico_miembro3"></td>
             </tr>
             <tr>
                 <td></td>
                 <td>¿La empresa cuenta con los espacios físicos necesarios para trabajar en una posible solución a este Reto? (1 no cuenta con los espacios físicos, 5 sí cuenta con los espacios físicos)</td>
                 <td><input type="text" name="reto4_factible_miembro1"></td>
-                <td><input type="text" name="reto4_factible_miembro2"></td>
-                <td><input type="text" name="reto4_factible_miembro3"></td>
                 <td>¿Trabajar en este Reto puede crear un impacto positivo bien sea económico, ambiental y/o social a la empresa? (1 no genera impacto positivo, 5 sí genera impactos positivos)</td>
                 <td><input type="text" name="reto4_estrategico_miembro1"></td>
-                <td><input type="text" name="reto4_estrategico_miembro2"></td>
-                <td><input type="text" name="reto4_estrategico_miembro3"></td>
             </tr>
 
 
@@ -435,12 +378,8 @@
                 <td></td>
                 <td>NOTA PROMEDIO DE CADA MIEMBRO DEL COMITÉ</td>
                 <td id="miembro1-promedio">0.0</td>
-                <td id="miembro2-promedio">0.0</td>
-                <td id="miembro3-promedio">0.0</td>
                 <td>NOTA PROMEDIO DE CADA MIEMBRO DEL COMITÉ</td>
                 <td id="estrategico-miembro1-promedio">0.0</td>
-                <td id="estrategico-miembro2-promedio">0.0</td>
-                <td id="estrategico-miembro3-promedio">0.0</td>
             </tr>
             </tbody>
         </table>
@@ -454,13 +393,9 @@
                 <tr>
                     <th>RETO 4</th>
                     <th>FACTIBLE</th>
-                    <th>MIEMBRO 1</th>
-                    <th>MIEMBRO 2</th>
-                    <th>MIEMBRO 3</th>
+                    <th>MIEMBRO</th>
                     <th>ESTRATÉGICO</th>
-                    <th>MIEMBRO 1</th>
-                    <th>MIEMBRO 2</th>
-                    <th>MIEMBRO 3</th>
+                    <th>MIEMBRO</th>
                 </tr>
             </thead>
             <tbody>
@@ -468,24 +403,16 @@
                     <td></td>
                     <td>¿La empresa cuenta con los recursos humanos para trabajar en este Reto?  (1 no cuenta con los recursos, 5 sí cuenta con todos los recursos)</td>
                     <td><input type="text" name="reto1_factible_miembro1"></td>
-                    <td><input type="text" name="reto1_factible_miembro2"></td>
-                    <td><input type="text" name="reto1_factible_miembro3"></td>
                     <td>¿Este Reto está alineado con la estrategia de innovación definida por la empresa? (1 no está alineado, 5 sí está alineado)</td>
                     <td><input type="text" name="reto1_estrategico_miembro1"></td>
-                    <td><input type="text" name="reto1_estrategico_miembro2"></td>
-                    <td><input type="text" name="reto1_estrategico_miembro3"></td>
                 </tr>
 
                 <tr>
                     <td></td>
                     <td>¿La empresa cuenta con los recursos financieros para una posible solución para este Reto? (1 no cuenta con los recursos, 5 sí cuenta con todos los recursos)</td>
                     <td><input type="text" name="reto4_factible_miembro1"></td>
-                    <td><input type="text" name="reto4_factible_miembro2"></td>
-                    <td><input type="text" name="reto4_factible_miembro3"></td>
                     <td>¿La posible solución a este Reto puede generar aumento de ingresos o reducción de costos? (1 no genera ni aumento de ingresos ni reducción de costos, 5 sí genera aumento de ingresos o reduce los costos)</td>
                     <td><input type="text" name="reto4_estrategico_miembro1"></td>
-                    <td><input type="text" name="reto4_estrategico_miembro2"></td>
-                    <td><input type="text" name="reto4_estrategico_miembro3"></td>
                 </tr>
 
 
@@ -494,23 +421,15 @@
                 <td></td>
                 <td>¿La empresa cuenta con el conocimiento para trabajar en este Reto? (1 no cuenta con el conocimiento, 5 sí cuenta con el conocimiento)</td>
                 <td><input type="text" name="reto3_factible_miembro1"></td>
-                <td><input type="text" name="reto3_factible_miembro2"></td>
-                <td><input type="text" name="reto3_factible_miembro3"></td>
                 <td>¿Trabajar en este Reto puede crearle una ventaja competitiva a la empresa? (1 no crea ninguna ventaja competitiva, 5 sí le crea una ventaja competitiva)</td>
                 <td><input type="text" name="reto3_estrategico_miembro1"></td>
-                <td><input type="text" name="reto3_estrategico_miembro2"></td>
-                <td><input type="text" name="reto3_estrategico_miembro3"></td>
             </tr>
             <tr>
                 <td></td>
                 <td>¿La empresa cuenta con los espacios físicos necesarios para trabajar en una posible solución a este Reto? (1 no cuenta con los espacios físicos, 5 sí cuenta con los espacios físicos)</td>
                 <td><input type="text" name="reto4_factible_miembro1"></td>
-                <td><input type="text" name="reto4_factible_miembro2"></td>
-                <td><input type="text" name="reto4_factible_miembro3"></td>
                 <td>¿Trabajar en este Reto puede crear un impacto positivo bien sea económico, ambiental y/o social a la empresa? (1 no genera impacto positivo, 5 sí genera impactos positivos)</td>
                 <td><input type="text" name="reto4_estrategico_miembro1"></td>
-                <td><input type="text" name="reto4_estrategico_miembro2"></td>
-                <td><input type="text" name="reto4_estrategico_miembro3"></td>
             </tr>
 
 
@@ -518,12 +437,8 @@
                 <td></td>
                 <td>NOTA PROMEDIO DE CADA MIEMBRO DEL COMITÉ</td>
                 <td id="miembro1-promedio">0.0</td>
-                <td id="miembro2-promedio">0.0</td>
-                <td id="miembro3-promedio">0.0</td>
                 <td>NOTA PROMEDIO DE CADA MIEMBRO DEL COMITÉ</td>
                 <td id="estrategico-miembro1-promedio">0.0</td>
-                <td id="estrategico-miembro2-promedio">0.0</td>
-                <td id="estrategico-miembro3-promedio">0.0</td>
             </tr>
 
 
@@ -542,3 +457,4 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
     </html>
+{% endblock %}

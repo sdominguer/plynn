@@ -1,0 +1,53 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center text-primary mb-4">¿A qué grupo perteneces?</h2>
+
+                        <form action="{% url 'home' %}" method="get">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="grupo">Selecciona tu grupo:</label>
+                                <select class="form-control" name="grupo" id="grupo">
+                                    <option value="B&A Beauty">B&A Beauty</option>
+                                    <option value="La Molienda Panelera">La Molienda Panelera</option>
+                                    <option value="Hotel MOA">Hotel MOA</option>
+                                    <option value="Superverfru">Superverfru</option>
+                                    <option value="INPRO">INPRO</option>
+                                    <option value="PETIT">PETIT</option>
+                                    <option value="ALNE">ALNE</option>
+                                    <option value="Alcaldía de Ronda">Alcaldía de Ronda</option>
+                                    <option value="Mundopiel">Mundopiel</option>
+                                    <option value="TECH">TECH</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">Continuar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+{% endblock %}
