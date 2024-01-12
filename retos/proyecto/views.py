@@ -10,7 +10,7 @@ from .models import Calificacion
 
 def home(request):
     grupo = request.GET.get("grupo", "")
-    return render(request, "home.html", {"grupo": grupo})
+    return render(request, "index.html", {"grupo": grupo})
 
 
 def login(request):
